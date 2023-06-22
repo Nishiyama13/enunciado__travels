@@ -4,7 +4,6 @@ import * as passengersTravelController from "../controllers/getPassengersTravels
 const routes = Router();
 
 routes.get("/passengers/travels", passengersTravelController.getPassengersTravels )
-
 export {
   routes
-} ;
+};

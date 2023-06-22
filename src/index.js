@@ -3,7 +3,7 @@ import httpStatus from "http-status";
 import { routes } from "./routes/travelRoutes.js";
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5004;
 
 app.get("/health", (req, res) => res.sendStatus(httpStatus.OK));
 app.use(routes)
