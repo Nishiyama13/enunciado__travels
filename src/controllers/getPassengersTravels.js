@@ -1,3 +1,4 @@
+import httpStatus from "http-status";
 import * as passengersTravelsService from "../services/passengersTravelsService.js"
 
 async function getPassengersTravels(req, res) {
@@ -8,7 +9,10 @@ async function getPassengersTravels(req, res) {
     res.status(200).send(result);
   } catch (error) {
     console.log(error);
-    res.sendStatus(500);    
+    if(error.message === 'Invalid page number'){
+      res.sendStatus(httpStatus.BAD_REQUEST);
+    }
+    res.sendStatus(error);    
   }
 }
 
